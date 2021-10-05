@@ -1,5 +1,6 @@
+
 <resources>
-    <string name="app_name">Homework10</string>
+    <string name="app_name">Homework11</string>
     <string name="text_view">Text view</string>
     <string name="email">Введите e-mail</string>
     <string name="hello_string">Привет, %1$s</string>
@@ -8,7 +9,5 @@
     <string name="make_long_operation">Совершить долгую операцию</string>
     <string name="long_operation_complite">Операция завершена</string>
     <string name="password">Введите пароль</string>
-    <string name="enter_text">Введите текст</string>
-    <string name="add">Добавить</string>
 
 </resources>
