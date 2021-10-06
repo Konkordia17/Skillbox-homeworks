@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ToolbarHomework" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/purple_700</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ToolbarStyle">
+        <item name="android:background">@color/purple_200</item>
+        <item name="android:theme">@style/ToolbarTheme</item>
+        <item name="android:elevation">8dp</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationStyle</item>
+    </style>
+
+    <style name="ToolbarNavigationStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="tint">@android:color/white</item>
+    </style>
+
+</resources>
+

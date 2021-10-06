@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Homework11.2</string>
+    <string name="action_1">Action1</string>
+    <string name="action_2">Action2</string>
+    <string name="action_3">Action3</string>
+    <string name="action_search">Search</string>
+</resources>
