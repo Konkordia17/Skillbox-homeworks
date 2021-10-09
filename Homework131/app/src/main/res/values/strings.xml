@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Homework13.1</string>
+    <string name="number">введите номер телефона</string>
+    <string name="call">Вызов</string>
+    <string name="textNumber">number</string>
+    <string name="login_Input">Введите логин</string>
+    <string name="password_Input">Введите пароль</string>
+    <string name="login_text">Логин</string>
+    <string name="text">text</string>
+</resources>
