@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ViewPager</string>
+    <string name="page1">Страница1</string>
+    <string name="page2">Страница2</string>
+    <string name="page3">Страница3</string>
+    <string name="page4">Страница4</string>
+    <string name="event">Сгенерировать событие</string>
+
+</resources>

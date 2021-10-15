@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Homework15</string>
+    <string name="onboarding_text_1">Один</string>
+    <string name="onboarding_text_2">Два</string>
+    <string name="onboarding_text_3">Три</string>
+    <string name="onboarding_text_4">Четыре</string>
+    <string name="onboarding_text_5">Пять</string>
+
+</resources>
