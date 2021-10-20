@@ -41,6 +41,7 @@ class FilterDialog : DialogFragment() {
             }
             .create()
     }
+
     companion object {
         private const val KEY = "Key"
         fun newInstance(tag: List<ArticleTag>): FilterDialog {
