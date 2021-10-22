@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container_list"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button
+        android:id="@+id/linearVertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Linear Vertical"
+        android:gravity="center"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/linear_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Linear Horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearVertical"
+        />
+    <Button
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GridLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linear_horizontal"
+        />
+    <Button
+        android:id="@+id/staggeredGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="StaggeredGrid"
+        app:layout_constraintTop_toBottomOf="@+id/grid"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.switchmaterial.SwitchMaterial
+import kotlin.random.Random
 
 open class DialogCreateInstruments : DialogFragment() {
     lateinit var stringCount: TextView
@@ -33,12 +34,14 @@ open class DialogCreateInstruments : DialogFragment() {
     private fun addInstrument() {
         val instrument: MusicalInstruments = if (stringCount.isVisible) {
             MusicalInstruments.StringInstruments(
+                id= Random.nextLong(),
                 nameInstrument.text.toString(),
                 imageInstrument.text.toString(),
                 stringCount.text.toString()
             )
         } else {
             MusicalInstruments.WindInstruments(
+                id= Random.nextLong(),
                 nameInstrument.text.toString(),
                 imageInstrument.text.toString()
             )

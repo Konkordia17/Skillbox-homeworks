@@ -1,10 +1,10 @@
 package com.example.homework16
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.homework16.adapters.UserAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class UserListFragment : Fragment(R.layout.fragment_user_list) {

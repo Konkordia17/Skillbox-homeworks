@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, PersonListFragment.newInstance("text"))
+            .replace(R.id.container, PersonListFragment())
             .commit()
     }
 }

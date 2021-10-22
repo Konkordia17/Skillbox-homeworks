@@ -36,10 +36,21 @@
         android:id="@+id/emptyList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Список инструментов пуст"
-        tools:ignore="MissingConstraints"
         android:gravity="center"
-        android:visibility="gone"/>
+        android:text="Список инструментов пуст"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/returnButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:background="@color/purple_200"
+        android:src="@drawable/ic_return"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/white" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

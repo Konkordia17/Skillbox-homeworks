@@ -1,13 +1,14 @@
-package com.example.homework16
+package com.example.homework16.adapters
 
-import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.homework16.R
+import com.example.homework16.User
+import com.example.homework16.inflate
 
 class UserAdapter(private val onItemClicked: (position:Int)-> Unit) : RecyclerView.Adapter<UserAdapter.Holder>() {
     private var users: List<User> = emptyList()
