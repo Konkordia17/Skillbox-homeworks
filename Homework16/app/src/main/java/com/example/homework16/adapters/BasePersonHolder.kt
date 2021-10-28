@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.homework16.R
 
-abstract class BasePersonHolder(view: View, onItemClick: (position: Int) -> Unit) :
+abstract class BasePersonHolder(view: View, onItemClick: (id: Long) -> Unit) :
     RecyclerView.ViewHolder(view) {
     private val nameTextView: TextView = view.findViewById(R.id.nameTextView)
     private val ageTextView: TextView = view.findViewById(R.id.ageTextView)
@@ -15,7 +15,7 @@ abstract class BasePersonHolder(view: View, onItemClick: (position: Int) -> Unit
 
     init {
         view.setOnClickListener {
-            onItemClick(adapterPosition)
+            onItemClick(itemId)
         }
     }
 

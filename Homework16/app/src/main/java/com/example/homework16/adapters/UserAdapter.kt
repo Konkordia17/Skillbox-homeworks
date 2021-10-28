@@ -10,7 +10,7 @@ import com.example.homework16.R
 import com.example.homework16.User
 import com.example.homework16.inflate
 
-class UserAdapter(private val onItemClicked: (position:Int)-> Unit) : RecyclerView.Adapter<UserAdapter.Holder>() {
+class UserAdapter(private val onItemClicked: (id:Long)-> Unit) : RecyclerView.Adapter<UserAdapter.Holder>() {
     private var users: List<User> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -31,7 +31,7 @@ class UserAdapter(private val onItemClicked: (position:Int)-> Unit) : RecyclerVi
 
     class Holder(
         view: View,
-    onItemClicked: (position: Int) -> Unit) : RecyclerView.ViewHolder(view) {
+    onItemClicked: (id:Long) -> Unit) : RecyclerView.ViewHolder(view) {
         private val nameTextView: TextView = view.findViewById(R.id.nameTextView)
         private val ageTextView: TextView = view.findViewById(R.id.ageTextView)
         private val developerTextView: TextView = view.findViewById(R.id.developerTextView)
@@ -39,7 +39,7 @@ class UserAdapter(private val onItemClicked: (position:Int)-> Unit) : RecyclerVi
 
         init {
             view.setOnClickListener {
-                onItemClicked(adapterPosition)
+                onItemClicked(itemId)
             }
 
         }

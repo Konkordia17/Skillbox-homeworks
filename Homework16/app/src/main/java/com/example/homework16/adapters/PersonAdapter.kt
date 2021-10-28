@@ -18,7 +18,7 @@ import com.hannesdorfmann.adapterdelegates4.AdapterDelegatesManager
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 
 class PersonAdapter(
-    private val onItemClick: (position: Int) -> Unit
+    private val onItemClick: (id:Long) -> Unit
 //) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 ):AsyncListDifferDelegationAdapter<Person>(PersonDifUtilCallback()){
 

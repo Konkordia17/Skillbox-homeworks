@@ -64,7 +64,7 @@ class UserListFragment : Fragment(R.layout.fragment_user_list) {
     }
 
     private fun initList() {
-        userAdapter = UserAdapter{position ->deleteUser(position) }
+        userAdapter = UserAdapter{position ->deleteUser(id) }
         with(userList) {
             adapter = userAdapter
             layoutManager = LinearLayoutManager(requireContext())
@@ -85,6 +85,7 @@ users = users.filterIndexed{index, user ->  index!=position}
         userAdapter?.updateUsers(users)
         userAdapter?.notifyItemInserted(0)
         userList.scrollToPosition(0)
+
     }
 
     companion object {

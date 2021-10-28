@@ -9,7 +9,7 @@ import com.example.homework16.R
 import com.example.homework16.inflate
 import com.hannesdorfmann.adapterdelegates4.AbsListItemAdapterDelegate
 
-class UserAdapterDelegate(private val onItemClick: (position: Int) -> Unit):
+class UserAdapterDelegate(private val onItemClick: (id: Long) -> Unit):
     AbsListItemAdapterDelegate<Person.User, Person, UserAdapterDelegate.UserHolder>() {
 
     override fun isForViewType(item: Person, items: MutableList<Person>, position: Int): Boolean {
@@ -28,7 +28,7 @@ class UserAdapterDelegate(private val onItemClick: (position: Int) -> Unit):
         holder.bind(item)
     }
     class UserHolder(
-        view: View, onItemClick: (position: Int) -> Unit
+        view: View, onItemClick: (id: Long) -> Unit
     ) : BasePersonHolder(view, onItemClick) {
         init {
             view.findViewById<TextView>(R.id.developerTextView).isVisible = false
