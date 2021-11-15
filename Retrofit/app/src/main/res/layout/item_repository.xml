@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imageRepository"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        tools:ignore="MissingConstraints"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        tools:src="@tools:sample/avatars"/>
+    <TextView
+        android:id="@+id/nameRepositoryTextView"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/imageRepository"
+        tools:ignore="MissingConstraints"
+        android:paddingTop="16dp"/>
+    <TextView
+        android:id="@+id/fullNameRepository"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/imageRepository"
+        app:layout_constraintTop_toBottomOf="@+id/nameRepositoryTextView"
+        android:paddingTop="16dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
