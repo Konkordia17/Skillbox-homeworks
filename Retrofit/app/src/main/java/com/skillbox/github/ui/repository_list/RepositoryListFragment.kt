@@ -1,10 +1,12 @@
 package com.skillbox.github.ui.repository_list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.skillbox.github.R
@@ -34,13 +36,20 @@ class RepositoryListFragment : Fragment(R.layout.fragment_repository_list) {
                 }
 
                 override fun onFailure(call: Call<List<PublicRepository>>, t: Throwable) {
-
+                    Log.d("TAGF", "asdf")
                 }
             })
     }
 
     private fun initList() {
-        repositoryAdapter = RepositoryAdapter()
+        repositoryAdapter = RepositoryAdapter { repository ->
+            val action =
+                RepositoryListFragmentDirections.actionRepositoryListFragmentToDetailInfoFragment(
+                    repository
+                )
+            findNavController().navigate(action)
+
+        }
         with(repositoryList) {
             adapter = repositoryAdapter
             layoutManager = LinearLayoutManager(context)
@@ -49,10 +58,12 @@ class RepositoryListFragment : Fragment(R.layout.fragment_repository_list) {
     }
 
     private fun observeViewModelState() {
-        repositoriesListViewModel.repositorieLiveData
-            .observe(viewLifecycleOwner) { newList ->
-                repositoryAdapter?.updateRepositories(newList)
-            }
+        repositoriesListViewModel.repositorieLiveData.observe(viewLifecycleOwner) { newList ->
+            repositoryAdapter?.updateRepositories(newList)
+        }
+    }
+
+    private fun openDetailInfo(position: Int) {
 
     }
 

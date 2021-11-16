@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="?attr/selectableItemBackground"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/imageRepository"
+        android:id="@+id/imageDetailInfo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         tools:ignore="MissingConstraints"
@@ -15,19 +14,29 @@
         android:paddingEnd="16dp"
         tools:src="@tools:sample/avatars"/>
     <TextView
-        android:id="@+id/nameRepositoryTextView"
+        android:id="@+id/nameDetailInfo"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/imageRepository"
+        app:layout_constraintStart_toEndOf="@+id/imageDetailInfo"
         tools:ignore="MissingConstraints"
         android:paddingTop="16dp"/>
     <TextView
-        android:id="@+id/fullNameRepository"
+        android:id="@+id/fullNameDetailInfo"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/imageRepository"
-        app:layout_constraintTop_toBottomOf="@+id/nameRepositoryTextView"
+        app:layout_constraintStart_toEndOf="@+id/imageDetailInfo"
+        app:layout_constraintTop_toBottomOf="@+id/nameDetailInfo"
         android:paddingTop="16dp"
         tools:ignore="MissingConstraints" />
+    <ImageButton
+        android:id="@+id/addToFavouritesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/nameDetailInfo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
