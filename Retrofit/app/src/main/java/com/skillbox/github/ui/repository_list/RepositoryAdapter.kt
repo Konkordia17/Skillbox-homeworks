@@ -1,13 +1,10 @@
 package com.skillbox.github.ui.repository_list
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.skillbox.github.R
+import com.skillbox.github.databinding.ItemRepositoryBinding
 
 class RepositoryAdapter(private val onItemClicked: (repository: PublicRepository) -> Unit) :
     RecyclerView.Adapter<RepositoryAdapter.Holder>() {
@@ -15,8 +12,8 @@ class RepositoryAdapter(private val onItemClicked: (repository: PublicRepository
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.item_repository, parent, false)
-        return Holder(view, onItemClicked)
+        val itemRepositoryBinding = ItemRepositoryBinding.inflate(inflater, parent, false)
+        return Holder(itemRepositoryBinding, onItemClicked)
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
@@ -27,19 +24,16 @@ class RepositoryAdapter(private val onItemClicked: (repository: PublicRepository
     override fun getItemCount(): Int = repositories.size
 
     class Holder(
-        view: View,
+        private val itemRepositoryBinding: ItemRepositoryBinding,
         val onItemClicked: (repository: PublicRepository) -> Unit
-    ) : RecyclerView.ViewHolder(view) {
-        private val imageViewRepository: ImageView = view.findViewById(R.id.imageRepository)
-        private val nameTextView: TextView = view.findViewById(R.id.nameRepositoryTextView)
-        private val fullNameTextView: TextView = view.findViewById(R.id.fullNameRepository)
+    ) : RecyclerView.ViewHolder(itemRepositoryBinding.root) {
 
         fun bind(repository: PublicRepository) {
-            nameTextView.text = repository.name
-            fullNameTextView.text = repository.full_name
+            itemRepositoryBinding.nameRepositoryTextView.text = repository.name
+            itemRepositoryBinding.fullNameRepository.text = repository.full_name
             Glide.with(itemView)
                 .load(repository.owner.avatar_url)
-                .into(imageViewRepository)
+                .into(itemRepositoryBinding.imageRepository)
             itemView.setOnClickListener {
                 onItemClicked(repository)
             }

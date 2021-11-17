@@ -7,7 +7,9 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
-
+    viewBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "com.skillbox.github"
         minSdkVersion 21
@@ -89,7 +91,6 @@ dependencies {
 
     //AppAuth
     implementation 'net.openid:appauth:0.7.1'
-
 
 
 }
