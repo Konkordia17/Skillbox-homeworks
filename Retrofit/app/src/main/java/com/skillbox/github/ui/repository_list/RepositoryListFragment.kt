@@ -30,7 +30,7 @@ class RepositoryListFragment : Fragment(R.layout.fragment_repository_list) {
         super.onViewCreated(view, savedInstanceState)
         initList()
         observeViewModelState()
-        repositoriesListViewModel.getRepositoryList()
+        repositoriesListViewModel.getListWithCoroutine()
     }
 
     private fun initList() {

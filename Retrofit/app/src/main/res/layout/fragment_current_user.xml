@@ -29,6 +29,25 @@
         app:layout_constraintTop_toBottomOf="@+id/loginTextView"
         android:paddingTop="16dp"
         tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/followerstextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Подписчики"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewUser"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userFollowsRec"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/followerstextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_repository"
+        />
 
 
 

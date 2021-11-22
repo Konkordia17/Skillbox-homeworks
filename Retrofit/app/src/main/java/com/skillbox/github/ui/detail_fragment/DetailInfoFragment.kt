@@ -22,7 +22,7 @@ class DetailInfoFragment : Fragment(R.layout.fragment_detail_info) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         repository = args.repository
-        detailInfoViewModel.checkRepository(repository)
+        detailInfoViewModel.check(repository)
     }
 
     override fun onCreateView(
@@ -41,8 +41,8 @@ class DetailInfoFragment : Fragment(R.layout.fragment_detail_info) {
         Glide.with(requireContext())
             .load(repository.owner.avatar_url)
             .into(binding.imageDetailInfo)
-        observeLiveData()
         setListeners()
+        observeLiveData()
     }
 
     private fun setListeners() {
