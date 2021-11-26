@@ -28,24 +28,7 @@ class MainFragmentViewModel : ViewModel() {
                 val fileUrlsFromAssets = context.resources.assets.open("url.txt")
                     .bufferedReader()
                     .use { it.readLines() }
-                fileUrlsFromAssets.forEach {
-                    val firstFileName = "${
-                        TimeUnit.MILLISECONDS
-                            .toSeconds(System.currentTimeMillis())
-                    }_${File(it).name}"
-                    val file = File(folder, firstFileName)
-                    try {
-                        file.outputStream().use { fileOutputStream ->
-                            Networking.api.getFile(it)
-                                .byteStream()
-                                .use { inputStream -> inputStream.copyTo(fileOutputStream) }
-                            putDataInSharedPref(it, firstFileName)
-                        }
-                    } catch (t: Throwable) {
-                        file.delete()
-                        toastLiveData.postValue("Ошибка соединения")
-                    }
-                }
+                fileUrlsFromAssets.forEach { downloadFile(it) }
             } catch (t: Throwable) {
                 folder?.delete()
                 toastLiveData.postValue("Ошибка соединения")
