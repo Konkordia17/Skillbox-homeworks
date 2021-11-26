@@ -52,19 +52,16 @@ dependencies {
     //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC'
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC")
-//    //ViewModel
-//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
-//    implementation "androidx.fragment:fragment-ktx:1.2.5"
-//    //LiveData
-//    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
-//    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
-//    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+    //ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+    implementation "androidx.fragment:fragment-ktx:1.4.0"
+    //LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
     //Moshi
     def moshiVersion = '1.12.0'
 
     implementation "com.squareup.moshi:moshi:$moshiVersion"
     implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"
-//    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
 
     //Retrofit
     def retrofitVersion = '2.9.0'
@@ -72,8 +69,4 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
 
     implementation "com.squareup.okhttp3:logging-interceptor:4.8.0"
-
-//    //AppAuth
-//    implementation 'net.openid:appauth:0.7.1'
-
 }
