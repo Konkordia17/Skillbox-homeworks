@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="20dp">
+
+    <EditText
+        android:id="@+id/inputAmountEditText"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:hint="@string/hint_sum"
+        android:background="@drawable/boudaries"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/converterTextView"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boudaries"
+        android:hint="@string/hint_sum"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="5dp" />
+
+    <ImageButton
+        android:id="@+id/changeValueButton"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_baseline_sync_alt_24"
+        app:layout_constraintEnd_toStartOf="@+id/converterTextView"
+        app:layout_constraintStart_toEndOf="@+id/inputAmountEditText"
+        app:layout_constraintTop_toBottomOf="@id/inputAmountEditText" />
+
+    <TextView
+        android:id="@+id/inputCurrencyTextView"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:hint="RUB"
+        android:background="@drawable/boudaries"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changeValueButton" />
+
+    <TextView
+        android:id="@+id/outputCurrencyTextView"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:hint="USD"
+        android:background="@drawable/boudaries"
+        app:layout_constraintStart_toStartOf="@+id/converterTextView"
+        app:layout_constraintTop_toBottomOf="@id/changeValueButton"/>
+    <Button
+        android:id="@+id/changeInputCurrencyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_currency"
+        android:textSize="10sp"
+        android:textColor="@color/purple_700"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/inputCurrencyTextView"
+        app:layout_constraintTop_toBottomOf="@id/inputCurrencyTextView"
+        tools:ignore="SmallSp" />
+    <Button
+        android:id="@+id/changeOutputCurrencyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_currency"
+        android:textSize="10sp"
+        android:textColor="@color/purple_700"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/outputCurrencyTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SmallSp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

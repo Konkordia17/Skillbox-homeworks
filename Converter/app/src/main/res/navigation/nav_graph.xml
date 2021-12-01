@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/downloadFragment">
+    <fragment
+        android:id="@+id/calculationFragment"
+        android:name="com.example.converter.ui.calculation.CalculationFragment"
+        android:label="CalculationFragment" >
+        <action
+            android:id="@+id/action_calculationFragment_to_currenciesListFragment2"
+            app:destination="@id/currenciesListFragment2" />
+        <argument
+            android:name="Valute"
+            app:argType="com.example.converter.data.model.Valute" />
+    </fragment>
+    <fragment
+        android:id="@+id/currenciesListFragment2"
+        android:name="com.example.converter.ui.currenciesList.CurrenciesListFragment"
+        android:label="CurrenciesListFragment" />
+    <fragment
+        android:id="@+id/downloadFragment"
+        android:name="com.example.converter.ui.download.DownloadFragment"
+        android:label="DownloadFragment"
+        app:startDestination="@id/action_downloadFragment_to_calculationFragment">
+        <action
+            android:id="@+id/action_downloadFragment_to_calculationFragment"
+            app:destination="@id/calculationFragment" />
+    </fragment>
+</navigation>

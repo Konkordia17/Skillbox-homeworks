@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Converter</string>
+    <string name="change_currency">Выбрать валюту</string>
+    <string name="hint_sum">0.00</string>
+</resources>

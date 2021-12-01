@@ -1,10 +1,9 @@
-package com.skillbox.github.data
+package com.example.converter.data
 
-import okhttp3.Headers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.simplexml.SimpleXmlConverterFactory
 import retrofit2.create
 
 object Networking {
@@ -12,19 +11,16 @@ object Networking {
         .addNetworkInterceptor(
             HttpLoggingInterceptor()
                 .setLevel(HttpLoggingInterceptor.Level.BODY)
-        )
-        .build()
+        ).build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://api.github.com/")
+        .baseUrl("http://www.cbr.ru/")
         .client(okHttpClient)
-        .addConverterFactory(MoshiConverterFactory.create())
+        .addConverterFactory(SimpleXmlConverterFactory.create())
         .build()
 
-    val githubApi: GithubApi
+    val valuteApi: Api
         get() = retrofit.create()
+
 }
 
-object Token {
-    var accessToken = ""
-}
