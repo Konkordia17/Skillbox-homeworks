@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/addNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите имя"
+        android:inputType="text"
+        android:paddingTop="10dp" />
+
+    <EditText
+        android:id="@+id/addNumberEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Номер телефона:"
+        android:inputType="phone"
+        android:paddingTop="10dp" />
+
+    <EditText
+        android:id="@+id/addEmailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="e-mail:"
+        android:paddingTop="10dp" />
+
+    <Button
+        android:id="@+id/addNewContactButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="добавить контакт" />
+
+</LinearLayout>
