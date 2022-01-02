@@ -1,7 +1,6 @@
 package com.example.database.data
 
 import androidx.room.TypeConverter
-import com.example.database.data.OrderStatus
 
 class OrderStatusConverter {
     @TypeConverter

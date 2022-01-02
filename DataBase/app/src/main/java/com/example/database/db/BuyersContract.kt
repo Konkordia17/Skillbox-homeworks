@@ -8,5 +8,6 @@ object BuyersContract {
         const val NAME = "name"
         const val SURNAME = "surname"
         const val ADDRESS = "address"
+        const val AGE = "age"
     }
 }

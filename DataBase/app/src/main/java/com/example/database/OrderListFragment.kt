@@ -10,7 +10,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.withTransaction
 import com.example.database.data.Buyer
+import com.example.database.data.Order
+import com.example.database.data.OrderStatus
 import com.example.database.databinding.FragmentOrdersListBinding
 import com.example.database.db.DataBase
 import kotlinx.coroutines.launch
@@ -19,6 +22,7 @@ class OrderListFragment : Fragment(R.layout.fragment_orders_list) {
     private var orderAdapter: OrderAdapter? = null
     private lateinit var binding: FragmentOrdersListBinding
     private val viewModel: OrderListViewModel by viewModels()
+    private val orderRepository = OrderRepository()
     private val buyerDao = DataBase.instance.buyerDao()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +44,7 @@ class OrderListFragment : Fragment(R.layout.fragment_orders_list) {
         super.onViewCreated(view, savedInstanceState)
         initList()
         observe()
+        addBuyerWithTransaction()
         binding.basketButton.setOnClickListener {
             findNavController().navigate(R.id.action_orderListFragment_to_productsBasketFragment)
         }
@@ -66,10 +71,10 @@ class OrderListFragment : Fragment(R.layout.fragment_orders_list) {
         val buyers = listOf(
             Buyer(
                 id = 1,
-                "Ivan", "Petrov", "Pushkin street"
+                "Ivan", "Petrov", "Pushkin street", 35
             ),
             Buyer(
-                id = 2, "Alena", "Ivanova", "Gagarin Street"
+                id = 2, "Alena", "Ivanova", "Gagarin Street", 17
             )
         )
         lifecycleScope.launch {
@@ -81,6 +86,22 @@ class OrderListFragment : Fragment(R.layout.fragment_orders_list) {
         lifecycleScope.launch {
             val buyers = buyerDao.getAllUsersWithRelations()
             Log.d("qwerty", buyers.toString())
+        }
+    }
+
+    private fun addBuyerWithTransaction() {
+        lifecycleScope.launch {
+            DataBase.instance.withTransaction {
+                val buyer = Buyer(
+                    3, "Pavel", "Ivanov", "Lenina street", 50
+                )
+                buyerDao.insertBuyers(listOf(buyer))
+                val order = Order(
+                    31, 3, 500, "Мороженое",
+                    OrderStatus.values().random()
+                )
+                orderRepository.saveOrder(order)
+            }
         }
     }
 }

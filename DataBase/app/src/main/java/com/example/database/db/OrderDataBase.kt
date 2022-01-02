@@ -12,7 +12,7 @@ abstract class OrderDataBase : RoomDatabase() {
     abstract fun buyerDao(): BuyerDao
 
     companion object {
-        const val DB_VERSION = 1
+        const val DB_VERSION = 2
         const val DB_NAME = "Order-database"
     }
 }

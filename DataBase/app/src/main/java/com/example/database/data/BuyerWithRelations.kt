@@ -2,8 +2,6 @@ package com.example.database.data
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import com.example.database.data.Buyer
-import com.example.database.data.Order
 import com.example.database.db.BuyersContract
 import com.example.database.db.OrdersContract
 

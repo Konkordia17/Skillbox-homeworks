@@ -13,6 +13,7 @@ object DataBase {
             OrderDataBase::class.java,
             OrderDataBase.DB_NAME
         )
+            .addMigrations(MIGRATION_1_2)
             .build()
     }
 }
